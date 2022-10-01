@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:titleTextColor="#000"
+        android:background="#e6a6e5"
+        android:id="@+id/toolbar"
+        app:popupTheme="@style/Theme.AppCompat.Light.DarkActionBar">
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:weightSum="3"
+        android:orientation="vertical"
+        android:padding="20sp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:weightSum="2"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.8"
+                android:src="@drawable/vegitables"
+                android:scaleType="fitXY"/>
+            <Button
+                android:id="@+id/vegetables"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.2"
+                android:text="vegetables"
+                android:textStyle="bold"
+                android:textColor="#024004"
+                android:textSize="20dp"
+                android:backgroundTint="@android:color/holo_green_light"
+                android:layout_marginStart="5dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:weightSum="2"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/fruits"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.2"
+                android:text="Fruits"
+                android:textStyle="bold"
+                android:textColor="#024004"
+                android:textSize="20dp"
+                android:backgroundTint="@android:color/holo_green_light"/>
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.8"
+                android:src="@drawable/fruits"
+                android:scaleType="fitXY"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:weightSum="2"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.8"
+                android:src="@drawable/grains"
+                android:scaleType="fitXY"/>
+
+            <Button
+                android:id="@+id/grains"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1.2"
+                android:text="Grains"
+                android:textStyle="bold"
+                android:textColor="#024004"
+                android:textSize="20dp"
+                android:backgroundTint="@android:color/holo_green_light"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
