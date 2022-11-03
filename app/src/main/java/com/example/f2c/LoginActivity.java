@@ -1,3 +1,4 @@
+//Kushwanth23
 package com.example.f2c;
 
 import androidx.annotation.NonNull;
@@ -36,7 +37,7 @@ public class LoginActivity extends AppCompatActivity {
         }
         setContentView(R.layout.activity_login);
 
-        email = findViewById(R.id.email);
+        email = findViewById(R.id.username);
         password = findViewById(R.id.password);
 
         link_to_reg = findViewById(R.id.btn_reg);

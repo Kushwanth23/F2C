@@ -77,10 +77,10 @@
                     android:id="@+id/price"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
-                "<!--android:text="Rs.5000 per night for two pax" -->
-                    android:textColor="#000"
+                "<!--android:text="Rs.5000 per night for two pax"
+                    android:textColor="#0000"
                     android:fontFamily="sans-serif-condensed"
-                    android:textSize="18dp"/>
+                    android:textSize="18dp"/> -->
 
                 <TextView
                     android:layout_width="match_parent"
@@ -95,8 +95,7 @@
                 <TextView
                     android:id="@+id/detail"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-                "<!--android:text="hello"-->
+                    android:layout_height="wrap_content"
                     android:textColor="#000"
                     android:fontFamily="sans-serif-condensed"
                     android:textSize="18dp"
