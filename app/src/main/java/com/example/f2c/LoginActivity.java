@@ -43,7 +43,12 @@ public class LoginActivity extends AppCompatActivity {
         link_to_reg = findViewById(R.id.btn_reg);
         login = findViewById(R.id.btn_login);
 
-        login.setOnClickListener(view -> signIn());
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                signIn();
+            }
+        });
 
         link_to_reg.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -18,7 +18,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button vegetables;
+    Button vegetables,grains;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         vegetables=findViewById(R.id.vegetables);
+        grains = findViewById(R.id.grains);
 
         vegetables.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,22 +37,29 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
+        grains.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent k = new Intent(MainActivity.this,GrainsListActivity.class);
+            }
+        });
+
+        /**Toolbar toolbar = findViewById(R.id.toolbar);
         if (toolbar != null){
             setSupportActionBar(toolbar);
-        }
+        }**/
 
     }
 
-    @Override
+    /**@Override
     public boolean onCreateOptionsMenu(@NonNull Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu,menu);
         return true;
 
-    }
+    }**/
 
     //@Override
-    public boolean onOptionsItemsSelected(@NonNull MenuItem item) {
+    /**public boolean onOptionsItemsSelected(@NonNull MenuItem item) {
         if (item.getItemId()==R.id.signout){
             FirebaseAuth.getInstance().signOut();
             finish();
@@ -61,5 +69,5 @@ public class MainActivity extends AppCompatActivity {
 
         }
         return true;
-    }
+    }**/
 }
