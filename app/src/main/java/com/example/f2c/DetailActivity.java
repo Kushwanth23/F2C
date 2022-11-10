@@ -36,7 +36,7 @@ public class DetailActivity extends AppCompatActivity {
         Toast.makeText(this, title, Toast.LENGTH_SHORT).show();
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference Ref = database.getReference("items");
+        DatabaseReference Ref = database.getReference("Types");
         myRef = Ref.child("vegetables").child(title);
 
         t1=findViewById(R.id.name);
