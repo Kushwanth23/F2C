@@ -14,8 +14,6 @@ import android.widget.Button;
 import android.widget.Toast;
 import androidx.appcompat.widget.Toolbar;
 
-import com.google.firebase.auth.FirebaseAuth;
-
 public class MainActivity extends AppCompatActivity {
 
     Button vegetables,grains;
@@ -32,15 +30,16 @@ public class MainActivity extends AppCompatActivity {
         vegetables.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent j =new Intent(MainActivity.this, VegetablesListActivity.class);
-                finish();
+                startActivity(new Intent(MainActivity.this, VegetablesListActivity.class));
+                //finish();
             }
         });
 
         grains.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent k = new Intent(MainActivity.this,GrainsListActivity.class);
+                startActivity(new Intent(MainActivity.this,GrainsListActivity.class));
+                //finish();
             }
         });
 

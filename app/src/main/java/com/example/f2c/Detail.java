@@ -18,11 +18,11 @@ public class Detail {
     }
 
     public String getAddress(){
-        return address;
+        return title;
     }
 
     public String getTitle(){
-        return title;
+        return address;
     }
     public String getDescription(){
         return description;

@@ -10,8 +10,7 @@ public class VegetablesListActivity extends AppCompatActivity {
 
     ListView list;
     String vegetables[] = {
-            "abcd",
-            "aaaa"
+            "abcd"
     };
 
     Integer[] imageid = {
