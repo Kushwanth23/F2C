@@ -1,110 +1,249 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+
     tools:context=".MainActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:titleTextColor="#000"
-        android:background="#e6a6e5"
+        android:background="@color/purple_500"
         android:id="@+id/toolbar"
+        app:title="Home"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/Theme.AppCompat.Light.DarkActionBar">
 
     </androidx.appcompat.widget.Toolbar>
 
+    <RelativeLayout
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="5dp"
+        android:id="@+id/cartLyt"
+        >
 
-    <LinearLayout
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/cart_icon"
+            android:layout_centerVertical="true"
+            android:adjustViewBounds="true"
+            />
+
+        <TextView
+            android:layout_width="20sp"
+            android:layout_height="20dp"
+            android:text=""
+            android:layout_marginStart="15dp"
+            android:background="@drawable/circle_bg"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif-medium"
+            android:id="@+id/cartItemCount"
+            android:visibility="gone"
+            android:textAppearance="@style/TextAppearance.AppCompat.Title"
+            />
+
+
+
+
+
+
+    </RelativeLayout>
+
+
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:weightSum="3"
-        android:orientation="vertical"
-        android:padding="20sp">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:weightSum="2"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.8"
-                android:src="@drawable/vegitables"
-                android:scaleType="fitXY"/>
-            <Button
-                android:id="@+id/vegetables"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1.2"
-                android:text="vegetables"
-                android:textStyle="bold"
-                android:textColor="#024004"
-                android:textSize="20dp"
-                android:backgroundTint="@android:color/holo_green_light"
-                android:layout_marginStart="5dp"/>
-
-        </LinearLayout>
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:fillViewport="true"
+        android:fitsSystemWindows="true"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:weightSum="2"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
 
-            <Button
-                android:id="@+id/fruits"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1.2"
-                android:text="Fruits"
-                android:textStyle="bold"
-                android:textColor="#024004"
-                android:textSize="20dp"
-                android:backgroundTint="@android:color/holo_green_light"/>
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.8"
-                android:src="@drawable/fruits"
-                android:scaleType="fitXY"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Categories"
+                android:fontFamily="sans-serif-medium"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:padding="5dp"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:orientation="horizontal"
+                android:weightSum="3"
+                >
+
+                <LinearLayout
+                    android:id="@+id/fruitsLyt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@drawable/txt_bg"
+                    android:padding="10dp"
+                    >
+
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/fruits"
+                        app:civ_border_color="#FF9900"
+                        app:civ_border_width="1dp"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fruits"
+                        android:layout_marginTop="5dp"
+                        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                        />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/vegetablesLyt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:background="@drawable/txt_bg"
+                    android:padding="10dp"
+                    >
+
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/vegitables"
+                        app:civ_border_color="#FF9900"
+                        app:civ_border_width="1dp"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Vegetables"
+                        android:layout_marginTop="5dp"
+                        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                        />
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/grainsLyt"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:background="@drawable/txt_bg"
+                    android:padding="10dp"
+                    >
+
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:src="@drawable/grains"
+                        app:civ_border_color="#FF9900"
+                        app:civ_border_width="1dp"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Grains"
+                        android:layout_marginTop="5dp"
+                        android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                        />
+
+
+                </LinearLayout>
+
+
+
+
+
+
+
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="For You"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:padding="5dp"
+                android:fontFamily="sans-serif-medium"
+                android:layout_marginTop="10dp"
+                />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+
+                >
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="5dp"
+                    />
+
+
+
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:indeterminate="true"
+                    android:indeterminateTint="@android:color/holo_red_light"
+                    android:id="@+id/progressBar"
+                    android:visibility="gone"
+                    />
+            </RelativeLayout>
+
+
+
+
+
+
+
+
+
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:weightSum="2"
-            android:orientation="horizontal">
+    </ScrollView>
 
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="0.8"
-                android:src="@drawable/grains"
-                android:scaleType="fitXY"/>
-
-            <Button
-                android:id="@+id/grains"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1.2"
-                android:text="Grains"
-                android:textStyle="bold"
-                android:textColor="#024004"
-                android:textSize="20dp"
-                android:backgroundTint="@android:color/holo_green_light"/>
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-</LinearLayout>
+</RelativeLayout>

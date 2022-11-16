@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity"
     android:orientation="vertical"
+    android:gravity="center"
     android:padding="20sp">
 
     <TextView
@@ -17,7 +18,6 @@
         android:textSize="40dp"
         android:textAlignment="center"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="200dp"
         />
 
     <EditText
@@ -27,6 +27,7 @@
         android:hint="Enter Username"
         android:layout_marginTop="30dp"
         android:textColor="@color/black"
+        android:inputType="textEmailAddress"
         />
     <EditText
         android:id="@+id/password"
@@ -61,7 +62,7 @@
         android:id="@+id/btn_reg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:text="New User? Sign up!"
         android:textColor="@color/black"
         android:background="@android:color/transparent"

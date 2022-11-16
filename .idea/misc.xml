@@ -3,15 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Models/F2C/app/src/main/res/layout/activity_coustum_list.xml" value="0.20923913043478262" />
-        <entry key="..\:/Models/F2C/app/src/main/res/layout/activity_detail.xml" value="0.25" />
-        <entry key="..\:/Models/F2C/app/src/main/res/layout/activity_login.xml" value="0.25" />
-        <entry key="..\:/Models/F2C/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Models/F2C/app/src/main/res/layout/activity_register.xml" value="0.25" />
-        <entry key="..\:/Models/F2C/app/src/main/res/layout/activity_splash.xml" value="0.1" />
-        <entry key="..\:/Models/F2C/app/src/main/res/layout/activity_vegetables_list.xml" value="0.25" />
-        <entry key="..\:/Models/F2C/app/src/main/res/layout/custom_list.xml" value="0.25" />
-        <entry key="..\:/Models/F2C/app/src/main/res/menu/main_menu.xml" value="0.24947916666666667" />
+        <entry key="..\:/College Projects/F2C/app/src/main/res/drawable/cart.xml" value="0.1335" />
+        <entry key="..\:/College Projects/F2C/app/src/main/res/drawable/cat_bg.xml" value="0.2255" />
+        <entry key="..\:/College Projects/F2C/app/src/main/res/drawable/circle_bg.xml" value="0.2255" />
+        <entry key="..\:/College Projects/F2C/app/src/main/res/drawable/close.xml" value="0.2255" />
+        <entry key="..\:/College Projects/F2C/app/src/main/res/drawable/edit_bg.xml" value="0.2255" />
+        <entry key="..\:/College Projects/F2C/app/src/main/res/drawable/txt_bg.xml" value="0.2255" />
+        <entry key="..\:/College Projects/F2C/app/src/main/res/drawable/white_bg.xml" value="0.2255" />
+        <entry key="..\:/College Projects/F2C/app/src/main/res/layout/activity_cart.xml" value="0.33" />
+        <entry key="..\:/College Projects/F2C/app/src/main/res/layout/activity_detail.xml" value="0.25" />
+        <entry key="..\:/College Projects/F2C/app/src/main/res/layout/activity_login.xml" value="0.18659420289855072" />
+        <entry key="..\:/College Projects/F2C/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/College Projects/F2C/app/src/main/res/layout/activity_register.xml" value="0.1956521739130435" />
+        <entry key="..\:/College Projects/F2C/app/src/main/res/layout/activity_vegetables_list.xml" value="0.1897644927536232" />
+        <entry key="..\:/College Projects/F2C/app/src/main/res/layout/dialogue_ddress.xml" value="0.22" />
+        <entry key="..\:/College Projects/F2C/app/src/main/res/layout/item_cart.xml" value="0.25" />
+        <entry key="..\:/College Projects/F2C/app/src/main/res/layout/item_product.xml" value="0.33" />
+        <entry key="..\:/College Projects/F2C/app/src/main/res/layout/no_data_lyt.xml" value="0.1897644927536232" />
       </map>
     </option>
   </component>
@@ -20,12 +28,5 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
-  </component>
-  <component name="VisualizationToolProject">
-    <option name="state">
-      <ProjectState>
-        <option name="scale" value="0.176" />
-      </ProjectState>
-    </option>
   </component>
 </project>
