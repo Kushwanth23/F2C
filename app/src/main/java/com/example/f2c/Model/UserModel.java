@@ -2,7 +2,7 @@ package com.example.f2c.Model;
 
 public class UserModel {
 
-    String username,emil,phone,image,uid;
+    String username,emil,phone,image,uid,dob,gender;
 
     public UserModel(){}
 
@@ -45,4 +45,17 @@ public class UserModel {
     public void setUid(String uid) {
         this.uid = uid;
     }
+
+    public String getDob() { return dob; }
+
+    public void setDob(String dob) { this.dob = dob; }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
 }

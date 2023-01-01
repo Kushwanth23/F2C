@@ -4,13 +4,18 @@ package com.example.f2c;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.example.f2c.Model.UserModel;
@@ -22,12 +27,15 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.Calendar;
+
 public class RegisterActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
     private static final String TAG="EmailPassword";
 
-    EditText email,password,conPassword,etPhone,etUsername;
+    EditText email,password,conPassword,etPhone,etUsername,registerDOB;
+    private DatePickerDialog picker;
     Button register,link_to_login;
 
     DatabaseReference reference;
@@ -46,6 +54,7 @@ public class RegisterActivity extends AppCompatActivity {
         conPassword = findViewById(R.id.cPassword);
         etPhone = findViewById(R.id.phone);
         etUsername = findViewById(R.id.name);
+        registerDOB = findViewById(R.id.editText_register_dob);
 
 
         register = findViewById(R.id.btn_reg);
@@ -54,6 +63,31 @@ public class RegisterActivity extends AppCompatActivity {
         link_to_login.setOnClickListener(view -> onBackPressed());
 
         register.setOnClickListener(view -> signup());
+
+
+
+        registerDOB.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final Calendar calendar=Calendar.getInstance();
+                int day=calendar.get(Calendar.DAY_OF_MONTH);
+                int month=calendar.get(Calendar.MONTH);
+                int year=calendar.get(Calendar.YEAR);
+
+
+                //Date Picker Dialog
+                picker=new DatePickerDialog(RegisterActivity.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int dayofMonth) {
+                        registerDOB.setText(dayofMonth+"/"+(month+1)+"/"+year);
+                    }
+                },year,month,day);
+                picker.show();
+            }
+        });
+
+
+
     }
 
         private void signup(){
@@ -65,6 +99,7 @@ public class RegisterActivity extends AppCompatActivity {
             String pw=password.getText().toString();
             String phone = etPhone.getText().toString();
             String username = etUsername.getText().toString();
+            String textDOB = registerDOB.getText().toString();
 
             ProgressDialog progressDialog = new ProgressDialog(RegisterActivity.this);
             progressDialog.setMessage("Creating New Account");
@@ -86,6 +121,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 model.setImage("");
                                 model.setUid(user.getUid());
                                 model.setEmil(em);
+                                model.setDob(textDOB);
 
                                 reference.child(user.getUid()).setValue(model).addOnCompleteListener(new OnCompleteListener<Void>() {
                                     @Override
@@ -105,13 +141,6 @@ public class RegisterActivity extends AppCompatActivity {
                                         }
                                     }
                                 });
-
-
-
-
-
-
-
                             }
                             if (!task.isSuccessful()) {
                                 Log.w(TAG, "signUpWithEmail:failure", task.getException());
@@ -123,6 +152,15 @@ public class RegisterActivity extends AppCompatActivity {
 
         private boolean validateForm(){
             boolean valid = true;
+
+            String textDOB = registerDOB.getText().toString();
+            if(TextUtils.isEmpty(textDOB)){
+                registerDOB.setError("Required.");
+                valid=false;
+            }
+            else {
+                registerDOB.setError(null);
+            }
 
             String em=email.getText().toString();
             if(TextUtils.isEmpty(em)){

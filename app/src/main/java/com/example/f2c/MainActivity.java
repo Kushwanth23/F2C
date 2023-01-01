@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 
+import com.example.f2c.Adapter.ItemAdapter;
 import com.example.f2c.CartSystem.CartActivity;
 import com.example.f2c.Listeners.ICartLoadListener;
 import com.example.f2c.Listeners.MyUpdateCartEvent;
@@ -95,6 +96,8 @@ public class MainActivity extends AppCompatActivity implements ICartLoadListener
         });
 
         binding.cartLyt.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, CartActivity.class)));
+
+        binding.imgProfile.setOnClickListener(view -> startActivity(new Intent(MainActivity.this, OptionsActivity.class)));
 
         binding.progressBar.setVisibility(View.VISIBLE);
         binding.recyclerView.setHasFixedSize(true);

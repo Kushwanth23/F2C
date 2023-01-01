@@ -3,7 +3,7 @@ package com.example.f2c.Model;
 
 public class Products {
 
-    String name,id,description,category,quantity,image;
+    String name,id,description,category,quantity,image,publisher;
     Integer price;
     Boolean stock;
 
@@ -74,4 +74,13 @@ public class Products {
     public void setImage(String image) {
         this.image = image;
     }
+
+    public String getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
+    }
+
 }

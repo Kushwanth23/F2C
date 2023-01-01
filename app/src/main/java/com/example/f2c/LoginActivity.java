@@ -55,6 +55,16 @@ public class LoginActivity extends AppCompatActivity {
             startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
             finish();
         });
+
+        Button buttonForgotPassword = findViewById(R.id.btn_reset);
+        buttonForgotPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(LoginActivity.this,"You Can Reset Your Password Now!",Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(LoginActivity.this,ForgotPasswordActivity.class));
+            }
+        });
+
     }
 
     private void signIn() {

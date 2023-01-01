@@ -1,20 +1,17 @@
 //Kushwanth23
 package com.example.f2c;
 
-import static com.example.f2c.ItemAdapter.productsList;
+import static com.example.f2c.Adapter.ItemAdapter.productsList;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Dialog;
-import android.app.ProgressDialog;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
 import android.widget.Toast;
 
+import com.example.f2c.CartSystem.CartActivity;
 import com.example.f2c.Listeners.ICartLoadListener;
 import com.example.f2c.Listeners.MyUpdateCartEvent;
 import com.example.f2c.Model.CartModel;
@@ -22,7 +19,6 @@ import com.example.f2c.Model.Products;
 import com.example.f2c.Model.UserModel;
 import com.example.f2c.databinding.ActivityDetailBinding;
 
-import com.example.f2c.databinding.DialogueDdressBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -39,7 +35,6 @@ import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 
 public class DetailActivity extends AppCompatActivity implements ICartLoadListener {
 
@@ -94,6 +89,9 @@ public class DetailActivity extends AppCompatActivity implements ICartLoadListen
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         binding.toolbar.setNavigationOnClickListener(v -> finish());
 
+        binding.cartLyt.setOnClickListener(v -> startActivity(new Intent(DetailActivity.this, CartActivity.class)));
+
+
         if (model !=null){
 
 
@@ -146,7 +144,7 @@ public class DetailActivity extends AppCompatActivity implements ICartLoadListen
         model.setImage(products.getImage());
         model.setPrice(products.getPrice());
         model.setTotalPrice(products.getPrice());
-
+        model.setPublisher(products.getPublisher());
 
 
         reference.child(products.getId()).setValue(model).addOnCompleteListener(new OnCompleteListener<Void>() {

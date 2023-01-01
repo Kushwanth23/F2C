@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RegisterActivity"
-    android:orientation="vertical"
     android:padding="20sp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
     <TextView
         android:layout_width="match_parent"
@@ -64,6 +68,50 @@
         android:textColor="@color/black"
         android:inputType="phone"
         />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText_register_dob"
+        android:hint="Select your date of birth(dd/mm/yyyy)"
+        android:inputType="date"
+        android:layout_marginTop="20dp"
+        android:textSize="16sp"
+        />
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/radio_group_register_gender"
+        >
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/radio_male"
+            android:text="Male"
+            android:textSize="13sp"
+            android:layout_marginTop="20dp"
+            android:textColor="#555555"/>
+        <RadioButton
+            android:id="@+id/radio_female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Female"
+            android:textSize="13sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="5dp"
+            android:textColor="#555555"/>
+
+        <RadioButton
+            android:id="@+id/radio_others"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Others"
+            android:layout_marginTop="20dp"
+            android:textColor="#555555"
+            android:textSize="13sp" />
+    </RadioGroup>
+
     <Button
         android:id="@+id/btn_reg"
         android:layout_width="match_parent"
@@ -85,4 +133,6 @@
         android:background="@android:color/transparent"
         />
 
-</LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

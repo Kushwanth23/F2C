@@ -4,6 +4,8 @@ public class CartModel {
     private String key;
     private String name;
     private String image;
+    private String publisher;
+
 
     private int price;
     private int quantity;
@@ -62,5 +64,14 @@ public class CartModel {
     public void setImage(String image) {
         this.image = image;
     }
+
+    public String getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(String publisher) {
+        this.publisher = publisher;
+    }
+
 
 }

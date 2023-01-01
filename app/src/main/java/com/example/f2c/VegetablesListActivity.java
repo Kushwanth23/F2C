@@ -3,16 +3,14 @@ package com.example.f2c;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.ActivityChooserView;
 import androidx.recyclerview.widget.GridLayoutManager;
 
+import com.example.f2c.Adapter.ItemAdapter;
 import com.example.f2c.Model.Products;
-import com.example.f2c.databinding.ActivityDetailBinding;
-import android.app.Activity;
+
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.f2c.databinding.ActivityVegetablesListBinding;
